@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd"> <!-- bean definitions here -->
+
+
+    <!-- load the properties file: sport.properties -->
+    <context:property-placeholder location="classpath:sport.properties"/>
+
+    <!-- define the dependency -->
+    <bean id="myFortuneService"
+          class="nik.baseball.RandomizeFortuneService">
+    </bean>
+
+    <bean id="myTennisCoach"
+          class="nik.baseball.TennisCoach">
+
+        <!-- set up constructor injection -->
+        <constructor-arg ref="myFortuneService"/>
+    </bean>
+
+    <bean id="myCricketCoach"
+          class="nik.baseball.CricketCoach">
+
+        <!-- set up setter injection -->
+        <property name="fortuneService" ref="myFortuneService"/>
+
+        <!-- inject literal values (call setters) -->
+        <property name="emailAddress" value="${foo.email}"/>
+        <property name="team" value="${foo.team}"/>
+    </bean>
+
+
+
+</beans>
+
+
+        <!--<?xml version="1.0" encoding="UTF-8"?>-->
+        <!--<beans xmlns="http://www.springframework.org/schema/beans"-->
+        <!--xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+        <!--xmlns:context="http://www.springframework.org/schema/context"-->
+        <!--xsi:schemaLocation="http://www.springframework.org/schema/beans-->
+        <!--http://www.springframework.org/schema/beans/spring-beans.xsd-->
+        <!--http://www.springframework.org/schema/context-->
+        <!--http://www.springframework.org/schema/context/spring-context.xsd-->
+        <!--http://www.springframework.org/schema/context ">-->
+
+
+        <!--<bean id="myCoach"-->
+        <!--class="nik.baseball.TrackCoach">-->
+        <!--</bean>-->
+
+        <!--</beans>-->
