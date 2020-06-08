@@ -2,14 +2,13 @@ package com.nik.demoannotation;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Component;
 
-@Component
+
 public class NewCoach implements Coach {
 
     @Autowired
-    @Qualifier("newFortuneService")
-    private FortuneService fortuneService;
+    @Qualifier("randomFortuneService")
+    private RandomFortuneService randomFortuneService;
 
 
     public NewCoach() {
@@ -23,6 +22,16 @@ public class NewCoach implements Coach {
 
     @Override
     public String getDailyFortune() {
-        return fortuneService.getFortune();
+        return randomFortuneService.getFortune();
+    }
+
+    @Override
+    public String getEmail() {
+        return null;
+    }
+
+    @Override
+    public String getTeam() {
+        return null;
     }
 }

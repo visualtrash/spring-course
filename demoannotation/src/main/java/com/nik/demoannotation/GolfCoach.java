@@ -4,6 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 @Component
 public class GolfCoach implements Coach {
 
@@ -13,6 +16,18 @@ public class GolfCoach implements Coach {
 
     public GolfCoach() {
         System.out.println(">> GolfCoach: inside default constructor");
+    }
+
+    //инициализирующий метод
+    @PostConstruct
+    public void doMyStartup() {
+        System.out.println("GolfCoach : Startup");
+    }
+
+    //метод уничтожения
+    @PreDestroy
+    public void doMyCleanup() {
+        System.out.println("GolfCoach : Cleanup");
     }
 
     //setter
@@ -33,5 +48,15 @@ public class GolfCoach implements Coach {
 
     public String getDailyFortune() {
         return fortuneService.getFortune();
+    }
+
+    @Override
+    public String getEmail() {
+        return null;
+    }
+
+    @Override
+    public String getTeam() {
+        return null;
     }
 }

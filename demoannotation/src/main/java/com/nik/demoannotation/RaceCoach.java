@@ -11,4 +11,14 @@ public class RaceCoach implements Coach {
     public String getDailyFortune() {
         return null;
     }
+
+    @Override
+    public String getEmail() {
+        return null;
+    }
+
+    @Override
+    public String getTeam() {
+        return null;
+    }
 }

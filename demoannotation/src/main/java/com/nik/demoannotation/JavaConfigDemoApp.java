@@ -1,14 +1,14 @@
 package com.nik.demoannotation;
 
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-public class AnnotationDemoApp {
+public class JavaConfigDemoApp {
 
     public static void main(String[] args) {
 
-        //чтение spring config file
-        ClassPathXmlApplicationContext context =
-                new ClassPathXmlApplicationContext("applicationContext.xml");
+        //чтение spring config JAVA CLASS*
+        AnnotationConfigApplicationContext context =
+                new AnnotationConfigApplicationContext(SportConfig.class);
 
         //получение бина из спринг контейнера
         Coach coach = context.getBean("golfCoach", Coach.class);
