@@ -5,7 +5,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class PracticeAnnoApp {
     public static void main(String[] args) {
 
-        // чтение spring config file
+        // чтение spring com.nik.config file
         ClassPathXmlApplicationContext context =
                 new ClassPathXmlApplicationContext("applicationContext.xml");
 

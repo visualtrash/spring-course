@@ -6,7 +6,7 @@ public class SwimJavaConfigDemoApp {
 
     public static void main(String[] args) {
 
-        //чтение spring config JAVA CLASS*
+        //чтение spring com.nik.config JAVA CLASS*
         AnnotationConfigApplicationContext context =
                 new AnnotationConfigApplicationContext(SportConfig.class);
 

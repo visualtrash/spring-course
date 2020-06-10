@@ -6,7 +6,7 @@ public class AnnotationDemoApp {
 
     public static void main(String[] args) {
 
-        //чтение spring config file
+        //чтение spring com.nik.config file
         ClassPathXmlApplicationContext context =
                 new ClassPathXmlApplicationContext("applicationContext.xml");
 

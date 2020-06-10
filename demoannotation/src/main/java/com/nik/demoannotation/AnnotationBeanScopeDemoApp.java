@@ -5,7 +5,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class AnnotationBeanScopeDemoApp {
     public static void main(String[] args) {
 
-        //загрузка spring config file
+        //загрузка spring com.nik.config file
         ClassPathXmlApplicationContext context =
                 new ClassPathXmlApplicationContext("applicationContext.xml");
 
