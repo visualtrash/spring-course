@@ -44,6 +44,12 @@
             <artifactId>spring-context</artifactId>
             <version>5.2.4.RELEASE</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
     </dependencies>
 
     <build>
