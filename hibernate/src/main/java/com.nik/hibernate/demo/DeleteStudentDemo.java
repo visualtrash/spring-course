@@ -6,6 +6,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 
+@SuppressWarnings("Duplicates")
 public class DeleteStudentDemo {
 
     public static void main(String[] args) {
