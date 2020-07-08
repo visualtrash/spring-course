@@ -1,4 +1,4 @@
-package com.one2one.hibernate.demo.entity;
+package com.one22.demo.entity;
 
 import javax.persistence.*;
 
@@ -21,6 +21,12 @@ public class InstructorDetail {
     @Column(name = "hobby")
     private String hobby;
 
+    //(new field for instructor)
+    @OneToOne(mappedBy = "instructorDetail",
+            cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST,
+                    CascadeType.REFRESH})
+    private Instructor instructor;
+
     //create constructor
     public InstructorDetail(String youtubeChannel, String hobby) {
         this.youtubeChannel = youtubeChannel;
@@ -28,6 +34,14 @@ public class InstructorDetail {
     }
 
     public InstructorDetail() {
+    }
+
+    public Instructor getInstructor() {
+        return instructor;
+    }
+
+    public void setInstructor(Instructor instructor) {
+        this.instructor = instructor;
     }
 
     //getters\setters
